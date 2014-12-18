@@ -1,8 +1,8 @@
-path = require 'path'
+{resolve} = require 'path'
 
 module.exports =
   configDefaults:
-    lscExecutablePath: path.join __dirname, '..', 'node_modules', 'LiveScript',
+    lscExecutablePath: resolve __dirname, '..', 'node_modules', 'LiveScript',
       'bin'
 
   activate: ->
