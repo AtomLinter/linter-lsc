@@ -2,7 +2,7 @@
 [LiveScript]: http://livescript.net/
 [lsc]: http://livescript.net/#usage
 
-# linter-coffeelint
+# linter-lsc
 
 This linter plugin for [Linter][] provides an interface to [lsc][]. It will be used with files that have the "[LiveScript][]" syntax.
 
