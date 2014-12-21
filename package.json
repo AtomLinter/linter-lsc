@@ -5,7 +5,7 @@
   "linter-package": true,
   "activationEvents": [],
   "description": "Atom linter plugin for LiveScript, using lsc.",
-  "repository": "https://github.com/johngeorgewright/atom-linter-lsc.git",
+  "repository": "https://github.com/AtomLinter/linter-lsc.git",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
