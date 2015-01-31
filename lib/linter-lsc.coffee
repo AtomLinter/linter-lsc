@@ -17,6 +17,8 @@ class LinterLsc extends Linter
 
   errorStream: 'stderr'
 
+  isNodeExecutable: yes
+
   constructor: (editor) ->
     super(editor)
     atom.config.observe 'linter-lsc.lscExecutablePath', =>
