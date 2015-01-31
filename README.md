@@ -18,14 +18,12 @@ $ apm install linter-lsc
 
 ## Settings
 
-You can configure linter-coffeelint by editing ~/.atom/config.cson (choose Open Your Config in Atom menu):
+You can configure linter-lsc by editing ~/.atom/config.cson (choose Open Your Config in Atom menu):
 
 ```
 'linter-lsc':
   'lscExecutablePath': null #lsc path. run 'which lsc' to find the path to the directory that holds the executable
 ```
-
-**Note:** This plugin finds the nearest coffeelint.json file and uses the `-f` command line argument to use that file, so you may not use the `-f` argument in the linter settings.
 
 ## Contributing
 
