@@ -1,9 +1,11 @@
 {resolve} = require 'path'
 
 module.exports =
-  configDefaults:
-    lscExecutablePath: resolve __dirname, '..', 'node_modules', 'LiveScript',
-      'bin'
+  config:
+    lscExecutablePath:
+      default: resolve __dirname, '..', 'node_modules', 'LiveScript', 'bin'
+      title: 'lsc Executable path'
+      type: 'string'
 
   activate: ->
     console.log 'activate linter-lsc'
