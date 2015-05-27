@@ -3,7 +3,6 @@
   "main": "./lib/init",
   "version": "1.1.2",
   "linter-package": true,
-  "activationCommands": {},
   "description": "Atom linter plugin for LiveScript, using lsc.",
   "repository": "https://github.com/AtomLinter/linter-lsc.git",
   "license": "MIT",
