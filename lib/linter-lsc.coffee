@@ -1,6 +1,5 @@
 linterPath = atom.packages.getLoadedPackage('linter').path
 Linter = require "#{linterPath}/lib/linter"
-{CompositeDisposable} = require 'atom'
 
 class LinterLsc extends Linter
   # The syntax that the linter handles. May be a string or
@@ -22,11 +21,11 @@ class LinterLsc extends Linter
 
   constructor: (editor) ->
     super(editor)
-    @disposables = new CompositeDisposable
-    @disposables.add atom.config.observe 'linter-lsc.lscExecutablePath', (lscExecutablePath)=>
+    @configSubscription = atom.config.observe 'linter-lsc.lscExecutablePath', (lscExecutablePath)=>
       @executablePath = lscExecutablePath
 
   destroy: ->
-    @disposables.dispose()
+    super
+    @configSubscription.dispose()
 
 module.exports = LinterLsc
