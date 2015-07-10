@@ -14,14 +14,22 @@ module.exports =
           lsc.compile fileText
           resolve []
         catch err
-          result = /Parse error on line (\d+): (.*)/.exec err.message
+          result = switch
+            when err instanceof SyntaxError
+              r = /(.*) on line (\d+)$/.exec err.message
+              line: r[2]
+              text: r[1]
+            else
+              r = /Parse error on line (\d+): (.*)/.exec err.message
+              line: r[1]
+              text: r[2]
           messages = [
             type: 'Error'
-            text: result[2]
+            text: result.text
             filePath: filePath
             range: [
-              [parseInt(result[1])-1, 0]
-              [parseInt(result[1]), 0]
+              [parseInt(result.line)-1, 0]
+              [parseInt(result.line), 0]
             ]
           ]
           resolve messages
