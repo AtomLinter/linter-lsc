@@ -9,7 +9,7 @@
     "atom": ">0.50.0"
   },
   "dependencies": {
-    "livescript": "^1.4.0"
+    "atom-livescript": "0.0.1"
   },
   "providedServices": {
     "linter": {
