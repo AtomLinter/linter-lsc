@@ -1,29 +1,13 @@
-{resolve} = require 'path'
 {BufferedProcess, CompositeDisposable} = require 'atom'
+lsc = require 'atom-livescript'
 
 module.exports =
-  config:
-    lscExecutablePath:
-      default: resolve __dirname, '..', 'node_modules', 'livescript'
-      title: 'lsc Executable path'
-      type: 'string'
-
-  activate: ->
-    @subscriptions = new CompositeDisposable
-    @subscriptions.add atom.config.observe 'linter-lsc.lscExecutablePath',
-      (executablePath)=>
-        @executablePath = executablePath
-
-  deactivate: ->
-    @subscriptions.dispose()
-
   provideLinter: ->
     grammarScopes: ['source.livescript']
     scope: 'file'
     lintOnFly: true
     lint: (textEditor)=>
       new Promise (resolve, reject)=>
-        lsc = require @executablePath
         filePath = textEditor.getPath()
         fileText = textEditor.getText()
         try
@@ -43,7 +27,7 @@ module.exports =
           resolve messages
 
         process.onWillThrowError ({error, handle})=>
-          atom.notifications.addError "Failed to run #{@lscExecutablePath}",
+          atom.notifications.addError "Failed to run lsc",
             detail: error.message
             dismissable: true
           handle()
