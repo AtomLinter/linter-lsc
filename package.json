@@ -8,8 +8,12 @@
   "engines": {
     "atom": ">0.50.0"
   },
+  "package-deps": { 
+    "linter": "^1.5.0"
+  },
   "dependencies": {
-    "atom-livescript": "0.0.1"
+    "atom-livescript": "0.0.1",
+    "atom-package-deps": "^2.0.1"
   },
   "providedServices": {
     "linter": {
