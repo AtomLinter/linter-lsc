@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "atom-livescript": "0.0.1",
-    "atom-package-deps": "^2.0.1"
+    "atom-package-deps": "^2.1.0"
   },
   "providedServices": {
     "linter": {
