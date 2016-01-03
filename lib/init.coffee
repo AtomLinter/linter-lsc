@@ -17,6 +17,7 @@ module.exports =
           lsc.compile fileText
           resolve []
         catch err
+          console.log err
           result = switch
             when err instanceof SyntaxError, err instanceof ReferenceError
               r = /(.*) on line (\d+)$/.exec err.message
