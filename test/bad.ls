@@ -4,3 +4,4 @@
 # ReferenceError
 #a-function-name = -> 1
 #a-functionName = -> 1
+#Ω = 'blah'
