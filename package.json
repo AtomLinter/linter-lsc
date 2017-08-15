@@ -1,7 +1,7 @@
 {
   "name": "linter-lsc",
   "main": "./src/index",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "Atom linter plugin for LiveScript, using lsc.",
   "repository": "https://github.com/AtomLinter/linter-lsc.git",
   "license": "MIT",

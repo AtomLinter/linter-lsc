@@ -1,5 +1,21 @@
 # Change Log
 
+## [v2.4.0](https://github.com/AtomLinter/linter-lsc/tree/v2.4.0) (2017-08-15)
+[Full Changelog](https://github.com/AtomLinter/linter-lsc/compare/v2.3.0...v2.4.0)
+
+**Implemented enhancements:**
+
+- Implement specs [\#16](https://github.com/AtomLinter/linter-lsc/issues/16)
+- Update the CI configuration and add Beta testing [\#27](https://github.com/AtomLinter/linter-lsc/pull/27) ([Arcanemagus](https://github.com/Arcanemagus))
+- Complete rewrite [\#25](https://github.com/AtomLinter/linter-lsc/pull/25) ([Arcanemagus](https://github.com/Arcanemagus))
+- Update atom-package-deps to version 4.0.1 🚀 [\#20](https://github.com/AtomLinter/linter-lsc/pull/20) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- atom-package-deps@3.0.8 untested ⚠️ [\#17](https://github.com/AtomLinter/linter-lsc/pull/17) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update atom-package-deps to version 3.0.7 🚀 [\#15](https://github.com/AtomLinter/linter-lsc/pull/15) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+
+**Fixed bugs:**
+
+- Remove Unicode variable from good test [\#26](https://github.com/AtomLinter/linter-lsc/pull/26) ([Arcanemagus](https://github.com/Arcanemagus))
+
 ## [v2.3.0](https://github.com/AtomLinter/linter-lsc/tree/v2.3.0) (2015-09-21)
 [Full Changelog](https://github.com/AtomLinter/linter-lsc/compare/v2.2.4...v2.3.0)
 
