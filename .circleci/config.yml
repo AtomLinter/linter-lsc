@@ -24,13 +24,13 @@ jobs:
       # Restore node_modules from the last build
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "package.json" }}
+          # Get latest cache for this package.json
+          - v1-dependencies-{{ checksum "package.json" }}
+          # Fallback to the last available cache
+          - v1-dependencies
       # Save project state for next steps
-      - run:
-          name: Save build SHA1 to a file
-          command: echo $CIRCLE_SHA1 > .circle-sha
       - save_cache:
-          key: v1-repo-{{ checksum ".circle-sha" }}
+          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
           paths:
             - ~/linter-lsc
 
@@ -38,12 +38,9 @@ jobs:
     <<: *defaults
     steps:
       # Restore project state
-      - run:
-          name: Save build SHA1 to a file
-          command: echo $CIRCLE_SHA1 > .circle-sha
       - restore_cache:
           keys:
-            - v1-repo-{{ checksum ".circle-sha" }}
+            - v1-repo-{{ .Environment.CIRCLE_SHA1 }}
       - run:
           name: Update APT
           command: sudo apt-get update
