@@ -1,7 +1,7 @@
 version: 2
 
 defaults: &defaults
- working_directory: ~/linter-lsc
+ working_directory: /tmp/linter-lsc
  docker:
    - image: circleci/node:latest
      environment:
@@ -29,18 +29,17 @@ jobs:
           # Fallback to the last available cache
           - v1-dependencies
       # Save project state for next steps
-      - save_cache:
-          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+      - persist_to_workspace:
+          root: /tmp
           paths:
-            - ~/linter-lsc
+            - linter-lsc
 
   stable:
     <<: *defaults
     steps:
       # Restore project state
-      - restore_cache:
-          keys:
-            - v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+      - attach_workspace:
+          at: /tmp
       - run:
           name: Update APT
           command: sudo apt-get update
