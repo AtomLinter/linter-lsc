@@ -22,6 +22,3 @@ up-case-name = (.name .= to-upper-case!)
 [{id:id1, name, age} for {id:id1, name} in table1
                      for {id:id2, age} in table2
                      when id1 is id2]
-
-# Unicode variables
-Ω = 'blah'
