@@ -1,9 +1,18 @@
 version: 2
+
+defaults: &defaults
+ working_directory: ~/linter-lsc
+ docker:
+   - image: circleci/node:latest
+     environment:
+       CIRCLE_BUILD_IMAGE: ubuntu
+       ATOM_CHANNEL: stable
+       APM_TEST_PACKAGES: language-livescript
+       DISPLAY: :99
+
 jobs:
   checkout_code:
-    working_directory: ~/linter-lsc
-    docker:
-      - image: circleci/node:latest
+    <<: *defaults
     steps:
       - checkout
       - run:
@@ -26,14 +35,7 @@ jobs:
             - ~/linter-lsc
 
   stable:
-    working_directory: ~/linter-lsc
-    docker:
-      - image: circleci/node:latest
-        environment:
-          CIRCLE_BUILD_IMAGE: ubuntu
-          ATOM_CHANNEL: stable
-          APM_TEST_PACKAGES: language-livescript
-          DISPLAY: :99
+    <<: *defaults
     steps:
       # Restore project state
       - run:
