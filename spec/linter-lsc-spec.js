@@ -10,7 +10,7 @@ const referencePath = join(fixturePath, 'reference_error.ls');
 const syntaxPath = join(fixturePath, 'syntax_error.ls');
 
 describe('The lsc provider for Linter', () => {
-  const lint = require('../src/').provideLinter().lint;
+  const { lint } = require('../src/').provideLinter();
 
   beforeEach(async () => {
     // Info about this beforeEach() implementation:
@@ -24,12 +24,10 @@ describe('The lsc provider for Linter', () => {
   });
 
   it('should be in the packages list', () =>
-    expect(atom.packages.isPackageLoaded('linter-lsc')).toBe(true),
-  );
+    expect(atom.packages.isPackageLoaded('linter-lsc')).toBe(true));
 
   it('should be an active package', () =>
-    expect(atom.packages.isPackageActive('linter-lsc')).toBe(true),
-  );
+    expect(atom.packages.isPackageActive('linter-lsc')).toBe(true));
 
   it('reports a ReferenceError in reference_error.ls', async () => {
     const editor = await atom.workspace.open(referencePath);
