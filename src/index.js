@@ -53,11 +53,11 @@ module.exports = {
           if (err instanceof SyntaxError || err instanceof ReferenceError) {
             const result = /(.+) on line (\d+)$/.exec(err.message);
             line = Number.parseInt(result[2], 10) - 1;
-            message = result[1];
+            [, message] = result;
           } else {
             const result = /Parse error on line (\d+): (.+)/.exec(err.message);
             line = Number.parseInt(result[1], 10) - 1;
-            message = result[2];
+            [,, message] = result;
           }
         }
 
