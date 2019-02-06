@@ -39,6 +39,11 @@
       }
     }
   },
+  "renovate": {
+    "extends": [
+      "config:base"
+    ]
+  },
   "eslintConfig": {
     "extends": "airbnb-base",
     "rules": {
