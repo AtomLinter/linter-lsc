@@ -1,8 +1,10 @@
 'use babel';
 
 import { join } from 'path';
-// eslint-disable-next-line no-unused-vars
-import { it, fit, wait, beforeEach, afterEach } from 'jasmine-fix';
+import {
+  // eslint-disable-next-line no-unused-vars
+  it, fit, wait, beforeEach, afterEach,
+} from 'jasmine-fix';
 
 const fixturePath = join(__dirname, 'fixtures');
 const goodPath = join(fixturePath, 'good.ls');
@@ -23,11 +25,13 @@ describe('The lsc provider for Linter', () => {
     await activationPromise;
   });
 
-  it('should be in the packages list', () =>
-    expect(atom.packages.isPackageLoaded('linter-lsc')).toBe(true));
+  it('should be in the packages list', () => {
+    expect(atom.packages.isPackageLoaded('linter-lsc')).toBe(true);
+  });
 
-  it('should be an active package', () =>
-    expect(atom.packages.isPackageActive('linter-lsc')).toBe(true));
+  it('should be an active package', () => {
+    expect(atom.packages.isPackageActive('linter-lsc')).toBe(true);
+  });
 
   it('reports a ReferenceError in reference_error.ls', async () => {
     const editor = await atom.workspace.open(referencePath);
